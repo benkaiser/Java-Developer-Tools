@@ -33,7 +33,19 @@ public class InsertStatements extends JPanel {
         JButton responder = new JButton("Translate");
         responder.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                output.setText(input.getText());
+                String in = input.getText();
+                String[] split = in.split("\n");
+                if(split.length > 2) {
+                    output.setText("");
+                    String table = "`" + split[0].replace("\t", "") + "`";
+                    String columns = "`" + split[1].replaceAll("\t", "`,`") + "`";
+                    for (int i = 2; i < split.length; i++) {
+                        String data = "'";
+                        data += split[i].replace("'", "\\'").replace("\t", "','");
+                        data += "'";
+                        output.setText(output.getText() + "INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");\n");
+                    }
+                }
             }
         });
         

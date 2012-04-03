@@ -19,8 +19,10 @@ public class MainFrame extends JFrame {
         setLayout(b);
         
         is = new InsertStatements();
-        //b.addLayoutComponent(is, BorderLayout.CENTER);
         add(is, BorderLayout.CENTER);
+        
+        MenuBar menu = new MenuBar();
+        add(menu, BorderLayout.NORTH);
         
         setVisible(true);
     }
