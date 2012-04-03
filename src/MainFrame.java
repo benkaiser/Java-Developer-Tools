@@ -8,7 +8,7 @@ public class MainFrame extends JFrame {
     InsertStatements is;
     
     public MainFrame() {
-        
+        // bens macbook comment
         setSize(800,800);
         
         setLocationRelativeTo(null);
