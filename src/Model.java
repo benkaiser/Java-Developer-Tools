@@ -1,14 +1,20 @@
+import java.util.Observable;
 
-public class Model {
+public class Model extends Observable {
     
-    int currentView = 0;
+    String currentView = MainFrame.INSERT;
 
-    public int getCurrentView() {
+    public String getCurrentView() {
         return currentView;
     }
 
-    public void setCurrentView(int currentView) {
+    public void setCurrentView(String currentView) {
         this.currentView = currentView;
+        setChanged();
+        notifyObservers("1");
+        clearChanged();
+        
+        System.out.println("Did notify");
     }
     
 }

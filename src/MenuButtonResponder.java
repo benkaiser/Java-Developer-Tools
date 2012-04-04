@@ -19,28 +19,12 @@ public class MenuButtonResponder implements ActionListener {
 
         // determine what to do based on the text
 
-        if (itemText.equals("Reset Collection")) {
-            data.setCurrentView(5);
-        } else if (itemText.equals("Add Book")) {
-            data.setCurrentView(2);
-        } else if (itemText.equals("Overview")) {
-            data.setCurrentView(1);
-        } else if (itemText.equals("Remove Book")) {
-            data.setCurrentView(4);
-        } else if (itemText.equals("Add Video")) {
-            data.setCurrentView(3);
-        } else if (itemText.equals("Remove Video")) {
-            data.setCurrentView(4);
-        } else if (itemText.equals("home.png")) {
-            data.setCurrentView(1);
-        } else if (itemText.equals("bookadd.png")) {
-            data.setCurrentView(2);
-        } else if (itemText.equals("booktake.png")) {
-            data.setCurrentView(4);
-        } else if (itemText.equals("videoadd.png")) {
-            data.setCurrentView(3);
-        } else if (itemText.equals("videotake.png")) {
-            data.setCurrentView(4);
+        if (itemText.equals("INSERT")) {
+            data.setCurrentView(MainFrame.INSERT);
+        } else if (itemText.equals("DELETE")) {
+            data.setCurrentView(MainFrame.DELETE);
+        } else if (itemText.equals("UPDATE")) {
+            data.setCurrentView(MainFrame.UPDATE);
         }
     }
 

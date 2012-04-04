@@ -1,9 +1,6 @@
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.awt.event.FocusEvent;
-import java.awt.event.FocusListener;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -11,21 +8,23 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 
 
-public class InsertStatements extends JPanel {
+public class UpdateStatements extends JPanel {
     
     JTextArea input;
     JTextArea output;
+    JTextField operation;
     
-    public InsertStatements() {
+    public UpdateStatements() {
         
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         
         input = new JTextArea();
         output = new JTextArea();
-        
-        input.setToolTipText("<html>Drop your tab delemited excel data here in the form of:<br/>TableName<br/>column1   column2 column3<br/>data1  data2   data3<br/>data1_1  data2_1 data3_1<html>");
+        operation = new JTextField();
+        operation.setMaximumSize(new Dimension(10000,30));
         
         JScrollPane scroll1 = new JScrollPane(input);
         scroll1.setPreferredSize(new Dimension(250, 250));
@@ -48,28 +47,20 @@ public class InsertStatements extends JPanel {
                         data += "'";
                         output.setText(output.getText() + "INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");\n");
                     }
-                } else {
-                    input.setBackground(new Color(255, 0, 0));
                 }
             }
         });
-        input.addFocusListener(new FocusListener() {
-            public void focusGained(FocusEvent arg0) {
-                input.setBackground(new Color(255,255,255));
-            }
-            public void focusLost(FocusEvent arg0) {   
-            } 
-        });
         
         JPanel p = new JPanel();
-        p.add(new JLabel("<html><div style=\"text-align: center;\"><h2>Insert Statements</h2><p>Input<p></div></html>"));
+        p.add(new JLabel("<html><div style=\"text-align: center;\"><h2>Update Statements</h2><p>Input<p></div></html>"));
         add(p);
+        add(operation);
         add(scroll1);
         JPanel p2 = new JPanel();
         p2.add(responder);
         add(p2);
         JPanel p3 = new JPanel();
-        p3.add(new JLabel("<html><div style=\"text-align: center;\"><p>Output</p></div></html>"));
+        p3.add(new JLabel("Output"));
         add(p3);
         add(scroll2);
     }

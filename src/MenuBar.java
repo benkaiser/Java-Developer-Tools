@@ -10,17 +10,21 @@ public class MenuBar extends JMenuBar {
     private JMenuItem menuItem;
 
     public MenuBar() {
-        menu = new JMenu("Library");
+        menu = new JMenu("EXCEL to SQL");
         add(menu);
 
-        menuItem = new JMenuItem("Overview");
+        menuItem = new JMenuItem("INSERT");
         menuItem.addActionListener(new MenuButtonResponder());
         menu.add(menuItem);
 
-        menuItem = new JMenuItem("Reset Collection");
+        menuItem = new JMenuItem("UPDATE");
         menuItem.addActionListener(new MenuButtonResponder());
         menu.add(menuItem);
-
+        
+        menuItem = new JMenuItem("DELETE");
+        menuItem.addActionListener(new MenuButtonResponder());
+        menu.add(menuItem);
+        
         menu = new JMenu("Book Holding");
         add(menu);
 
