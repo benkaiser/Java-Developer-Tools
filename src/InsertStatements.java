@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.FocusEvent;
 import java.awt.event.FocusListener;
+import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
@@ -39,15 +40,16 @@ public class InsertStatements extends JPanel {
                 String in = input.getText();
                 String[] split = in.split("\n");
                 if(split.length > 2) {
-                    output.setText("");
                     String table = "`" + split[0].replace("\t", "") + "`";
                     String columns = "`" + split[1].replaceAll("\t", "`,`") + "`";
+                    ArrayList<String> items = new ArrayList<String>();
                     for (int i = 2; i < split.length; i++) {
                         String data = "'";
                         data += split[i].replace("'", "\\'").replace("\t", "','");
                         data += "'";
-                        output.setText(output.getText() + "INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");\n");
+                        items.add(output.getText() + "INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");");
                     }
+                    output.setText(Util.Join(items,"\n"));
                 } else {
                     input.setBackground(new Color(255, 0, 0));
                 }

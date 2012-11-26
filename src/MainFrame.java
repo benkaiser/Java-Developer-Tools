@@ -19,7 +19,7 @@ public class MainFrame extends JFrame implements Observer {
     
     public MainFrame() {
         
-        setSize(800,800);
+        setSize(800,600);
         
         setLocationRelativeTo(null);
         
