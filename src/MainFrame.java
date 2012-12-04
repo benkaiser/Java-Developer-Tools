@@ -15,6 +15,7 @@ public class MainFrame extends JFrame implements Observer {
     
     InsertStatements is;
     UpdateStatements us;
+    DeleteStatements ds;
     JPanel cl;
     
     public MainFrame() {
@@ -37,9 +38,10 @@ public class MainFrame extends JFrame implements Observer {
         // Add some views to the cardLayout
         is = new InsertStatements();
         us = new UpdateStatements();
+        ds = new DeleteStatements();
         cl.add(is, INSERT);
         cl.add(us, UPDATE);
-        
+        cl.add(ds, DELETE);
         // add the menu bar at the top
         MenuBar menu = new MenuBar();
         add(menu, BorderLayout.NORTH);

@@ -47,7 +47,7 @@ public class InsertStatements extends JPanel {
                         String data = "'";
                         data += split[i].replace("'", "\\'").replace("\t", "','");
                         data += "'";
-                        items.add(output.getText() + "INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");");
+                        items.add("INSERT INTO " + table + " (" + columns + ") VALUES (" + data + ");");
                     }
                     output.setText(Util.Join(items,"\n"));
                 } else {
