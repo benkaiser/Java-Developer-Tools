@@ -12,10 +12,13 @@ public class MainFrame extends JFrame implements Observer {
     public static final String INSERT = "1";
     public static final String UPDATE = "2";
     public static final String DELETE = "3";
+    public static final String HASH = "4";
     
     InsertStatements is;
     UpdateStatements us;
     DeleteStatements ds;
+    HashConverter hc;
+
     JPanel cl;
     
     public MainFrame() {
@@ -39,9 +42,11 @@ public class MainFrame extends JFrame implements Observer {
         is = new InsertStatements();
         us = new UpdateStatements();
         ds = new DeleteStatements();
+        hc = new HashConverter();
         cl.add(is, INSERT);
         cl.add(us, UPDATE);
         cl.add(ds, DELETE);
+        cl.add(hc, HASH);
         // add the menu bar at the top
         MenuBar menu = new MenuBar();
         add(menu, BorderLayout.NORTH);

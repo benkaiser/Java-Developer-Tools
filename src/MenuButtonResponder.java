@@ -25,6 +25,8 @@ public class MenuButtonResponder implements ActionListener {
             data.setCurrentView(MainFrame.DELETE);
         } else if (itemText.equals("UPDATE")) {
             data.setCurrentView(MainFrame.UPDATE);
+        } else if (itemText.equals("Hash")){
+            data.setCurrentView(MainFrame.HASH);
         }
     }
 

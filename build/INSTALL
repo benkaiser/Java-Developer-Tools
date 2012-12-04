@@ -1,6 +1,6 @@
 #!/bin/bash
 pwd=`pwd`
-rm /usr/share/applications/usr_bin_jdt.desktop
+rm -f /usr/share/applications/usr_bin_jdt.desktop
 echo -e \
 "[Desktop Entry]\n"\
 "Encoding=UTF-8\n"\
@@ -12,3 +12,4 @@ echo -e \
 "Terminal=false\n"\
 "Categories=Development;Java;" \
 >> /usr/share/applications/usr_bin_jdt.desktop
+echo "Finished Installing";
